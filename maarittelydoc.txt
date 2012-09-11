@@ -1,23 +1,0 @@
-Määrittelydokumentti
-
-1. Mitä algoritmeja ja tietorakenteita toteutat työssäsi
- -Aion toteuttaa työssäni ainakin kaksi, mahdollisesti kolme kekotietorakennetta: binomikeon, binäärikeon ja fibonaccikeon.
-
-2. Mitä ongelmaa ratkaiset ja miksi valitsit kyseiset algoritmit/tietorakenteet
-- Esittelen ja vertailen kolmea eri kekoa ja niiden rakenteita. Valitsin aiheen, koska en ole kovin taitava koodaaja, mutta aihe tuntui kuitenkin hallittavalta, koska kekorakenteen ovat erillisiä.
-
-3. Mitä syötteitä ohjelma saa ja miten näitä käytetään
-Ohjelma itsessään ei saa syötteitä, mulla keoilla on monta eri käyttötarkoitusta mm. verkkoalgoritmit käyttävät kekoja solmujen läpikäyntijärjestyksen tallentamiseen ja selvittämiseen.
-
-4. Tavoitteena olevat aika- ja tilavaativuudet (m.m. O-analyysi)
-
-BinomikekoMerge() menee läpi ajassa O(log n). Insert() -metodi menisi itsessään läpi vakioajassa, sillä siinä tehdään vain uusi keko ja yhdistetään se vanhaan kekoon.Merge() kuitenkin aiheuttaa sen, että insertin aikavaativuus on O(log n). Pienimmän alkion löytäminen ja poistaminen tapahtuu ajassa O(log n).Mikäli pienintä alkiota on ylläpidetty pointterilla, sen löytäminen tapahtuu ajassa O(1).BinäärikekoBinäärikeossa metodit insert() ja delete() menevät läpi parhaimmassa tapauksessa ajassa O(log n). Delete() tapahtuu myös vakioajassa, eli on yhtä suuri kuin puun korkeus. Keko rakentuu ajassa O(n log n), sillä jokainen insert() vie aikaa O(log n) ja niitä tehdään n kertaa, niin kauan kuin lisättäviä alkioita on. FibonaccikekoFibonaccikeon tavoitteena olisi suorittaa insert nopeammin kuin em. keoissa. Delete_min on suurinpiirtein yhtätehokas kuin muissakin, koska se tapahtuu ajassa O(log n).
-
-5. Lähteet
-http://www.cs.helsinki.fi/group/java/k11/tira/tira2011.pdf
-http://en.wikipedia.org/wiki/Fibonacci_heap
-http://www.cs.helsinki.fi/u/mnykanen/ATPe/luennot3.pdf
-http://en.wikipedia.org/wiki/Binary_heap
-http://en.wikipedia.org/wiki/Binomial_heap
-http://en.wikipedia.org/wiki/Heap_(data_structure)
-T. H. Cormen, C. E. Leiserson, R. L. Rivest, C. Stein: Introduction to Algorithms, 3rd ed., MIT Press, 2009.
