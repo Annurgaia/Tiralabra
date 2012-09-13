@@ -9,6 +9,8 @@ package main;
  *
  * @author annahietanen
  */
+
+//Three links(?) are stored into the node, the parent, the right child and the left child.
 public class Binarynode {
     
 int value;

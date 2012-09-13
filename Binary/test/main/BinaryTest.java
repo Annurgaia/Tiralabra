@@ -48,5 +48,6 @@ public class BinaryTest {
         long end = System.currentTimeMillis();
         long totaltime = end - start;
         System.out.println("Time spent: " + totaltime + "ms = " + (totaltime*1.0)/1000 + "s");      
+      
     }
 }

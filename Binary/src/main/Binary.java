@@ -43,7 +43,7 @@ public class Binary {
         }
         heap_up(node);
     }
-    //Removes a node from the heap.
+    //Removes a node from the heap. The order f the heap is checked in the end with heap_down().
     public int delete() {
         if (size == 1) {
             int helpvalue = root.value;
