@@ -17,6 +17,7 @@ public class Binary {
         size = 0;
     }
     
+    //Adds a new node to the heap and changes it to binary form. If the heap ends in 0, it adds it on left side, otherwise on the right side.
     public void insert(int value) {
         Binarynode node = new Binarynode(value);
         size++;
@@ -42,7 +43,7 @@ public class Binary {
         }
         heap_up(node);
     }
-    
+    //Removes a node from the heap.
     public int delete() {
         if (size == 1) {
             int helpvalue = root.value;
@@ -73,6 +74,7 @@ public class Binary {
         return returnable;
 
     }
+    //Prints the heap.
       public void print_heap(Binarynode root) {
         System.out.println(root.value);
         if (root.left != null) {
