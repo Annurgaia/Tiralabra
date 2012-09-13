@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
 
@@ -13,6 +9,7 @@ import org.junit.*;
  * @author annahietanen
  */
 public class BinomialTest {
+    
     Binomial heap;
     public BinomialTest() {
     }
