@@ -58,6 +58,6 @@ public class BinomialTest {
      
         long end = System.currentTimeMillis();
         long totaltime = end - start;
-        System.out.println("Aikaa kului: " + totaltime + "ms = " + (totaltime*1.0)/1000 + "s");  
+        System.out.println("Time spent: " + totaltime + "ms = " + (totaltime*1.0)/1000 + "s");  
 }
 }
