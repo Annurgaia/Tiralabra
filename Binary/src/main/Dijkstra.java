@@ -9,7 +9,7 @@ package main;
  * @author annahietanen
  */
 public class Dijkstra {
-    Binary binaariheap = new Binary();
+    Binary binaryheap = new Binary();
     Binomial binomialheap = new Binomial();
     
     public void calculate_with_dijkstra(){

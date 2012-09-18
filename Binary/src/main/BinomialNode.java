@@ -19,7 +19,7 @@ int value;
     public BinomialNode() {
     }
 
-    public BinomialNode(int arvo) {
+    public BinomialNode(int value) {
         this.value = value;
     }
 

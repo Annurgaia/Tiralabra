@@ -1,6 +1,8 @@
 package main;
 
 
+
+
 import org.junit.*;
 
 
@@ -32,6 +34,23 @@ public class BinomialTest {
     public void tearDown() {
     }
     @Test
+    public void insertTest(){
+        long start = System.currentTimeMillis();
+        for  (int i = 0; i < 100000; i++){
+            heap.insert(i);
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Time spent inserting 100 000: " + (end-start)*1.0 + "ms.");
+        
+        long deleteStart = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++){
+            heap.extract_min();
+        }
+        long deleteEnd = System.currentTimeMillis();
+        System.out.println("Time spent deleting 100 000: " + (deleteEnd-deleteStart)*1.0 + "ms.");
+    }
+    
+    @Test
     public void heapTest(){
      long start = System.currentTimeMillis();
         for (int i = 0; i < 10000; i++){
@@ -44,6 +63,7 @@ public class BinomialTest {
         System.out.println("Time spent: " + totaltime + "ms = " + (totaltime*1.0)/1000 + "s"); 
         
 }
+    @Test
     public void heapTest2(){
         long start = System.currentTimeMillis();
         for (int i = 0; i < 10000; i++){

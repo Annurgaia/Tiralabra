@@ -4,6 +4,9 @@
  */
 package main;
 
+import main.BinomialNode;
+import main.BinomialNode;
+
 /**
  *
  * @author annahietanen
@@ -22,8 +25,9 @@ public class Binomial {
         this.size = size;
         this.root = node;
     }
-
+//Luodaan uusi keko, joka sisältää uuden solmun. Unionin avulla yhdistetään alkupräiseen kekoon.
     public void insert(int value) {
+        //uusi keko
         Binomial h = new Binomial();
         BinomialNode node = new BinomialNode(value);
         node.parent = null;
@@ -36,6 +40,7 @@ public class Binomial {
         size++;
     }
 
+    //keon pienimmän arvon etsintä
     public BinomialNode find_min() {
         int value = Integer.MAX_VALUE;
         BinomialNode helpnode = root;
@@ -66,19 +71,21 @@ public class Binomial {
             z = y.parent;
         }
     }
+     //pienimmän arvon poisto
      public void extract_min() {
         Binomial helpheap = new Binomial();
         BinomialNode min = find_min();
         BinomialNode temp = min.child;
         BinomialNode current = root;
         BinomialNode help = root;
-
+        //jos juuri ei ole pieni, etsitään sisarista pienintä arvoa
         if (root.value != min.value) {
             while (help.sibling.value != min.value) {
                 help = help.sibling;
             }
             help = help.sibling.sibling;
         }
+        //jos juuri on pienin, se poistetaan ja sisaresta tulee uusi juuri
         if (root.value == min.value) {
             root = root.sibling;
         }
@@ -98,14 +105,17 @@ public class Binomial {
             this.root = newer.root;
         }
     }
+     //luodaan kahden binomisolmun välille parent-child-yhteys
       public void binomial_link(BinomialNode y, BinomialNode z) {
         y.parent = z;
         y.sibling = z.child;
         z.child = y;
         z.degree++;
     }
+      //yhdistetään kaksi kekoa toisiinsa mergellä
 public Binomial union(Binomial h1, Binomial h2) {
         Binomial h = new Binomial();
+        //valitaan juuri
         h.root = merge(h1, h2);
         if (h.root == null) {
             return h;
@@ -113,6 +123,7 @@ public Binomial union(Binomial h1, Binomial h2) {
         BinomialNode prev_x = null;
         BinomialNode x = h.root;
         BinomialNode next_x = x.sibling;
+        //yhdistetään keot ja tarkisteetaan ettei ole kahta samanasteista puuta
         while (next_x != null) {
             if (x.degree != next_x.degree || (next_x.sibling != null) && (next_x.sibling.degree == x.degree)) {
                 prev_x = x;
@@ -178,7 +189,7 @@ public Binomial union(Binomial h1, Binomial h2) {
         }
         return h;
     }
- 
+ //printataan puu
 public String toString() {
         String result = "";
 
@@ -189,7 +200,7 @@ public String toString() {
         }
         return result;
     }
-
+//main
     public static void main(String[] args) {
 
         Binomial binomialheap = new Binomial();

@@ -18,21 +18,27 @@ public class BinaryTest {
     public BinaryTest() {
     }
   
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() throws Exception{
-    }
-    
     @Before
     public void setUp() {
      binaryheap = new Binary();
     }
     
-    @After
-    public void tearDown() {
+   @Test
+    public void insertTest(){
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++){
+            binaryheap.insert(i);
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("Time spent adding 100 000: " + (end-start)*1.0 + "ms.");
+        
+        long deleteStart = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++){
+            binaryheap.delete();
+        }
+        long deleteEnd = System.currentTimeMillis();
+        System.out.println("Time spent deleting 100 000: " + (deleteEnd-deleteStart)*1.0 + "ms.");
+        
     }
     
     @Test
