@@ -4,8 +4,6 @@
  */
 package main;
 
-import main.BinomialNode;
-import main.BinomialNode;
 
 /**
  *
@@ -14,37 +12,38 @@ import main.BinomialNode;
 
   
 public class Binomial {
- 
-    BinomialNode root;
+
+    Binomialnode root;
     int size;
 
-  public Binomial() {
-      
-  }
-    public Binomial(BinomialNode node, int size) {
+    public Binomial() {
+    }
+
+    public Binomial(Binomialnode node, int size) {
         this.size = size;
         this.root = node;
     }
-//Luodaan uusi keko, joka sisältää uuden solmun. Unionin avulla yhdistetään alkupräiseen kekoon.
+
+//Luodaan uusi keko, joka sisältää uuden solmun. Unionin avulla yhdistetään alkuperäiseen kekoon.
     public void insert(int value) {
-        //uusi keko
-        Binomial h = new Binomial();
-        BinomialNode node = new BinomialNode(value);
+        Binomial heap1 = new Binomial();
+        Binomialnode node = new Binomialnode(value);
+
         node.parent = null;
         node.child = null;
         node.sibling = null;
         node.degree = 0;
-        h.root = node;
-        Binomial newer = union(h, this);
-        this.root = newer.root;
+        heap1.root = node;
+        Binomial heap2 = union(heap1, this);
+        this.root = heap2.root;
         size++;
     }
 
     //keon pienimmän arvon etsintä
-    public BinomialNode find_min() {
+    public Binomialnode find_min() {
         int value = Integer.MAX_VALUE;
-        BinomialNode helpnode = root;
-        BinomialNode min = null;
+        Binomialnode helpnode = root;
+        Binomialnode min = null;
         while (helpnode != null) {
             if (helpnode.value < value) {
                 value = helpnode.value;
@@ -54,59 +53,51 @@ public class Binomial {
         }
         return min;
     }
-     public void decreaseKey(BinomialNode x, int k) {
-        if (k > x.value) {
-            System.out.println("You gave a greater value! The value of the Binomialnode is: " + x.value);
-            return;
-        }
-        x.value = k;
-        BinomialNode y = x;
-        BinomialNode z = y.parent;
-
-        while ((z != null) && y.value < x.value) {
-            int helpvalue = y.value;
-            y.value = x.value;
-            x.value = helpvalue;
-            y = z;
-            z = y.parent;
-        }
-    }
-     //pienimmän arvon poisto
-     public void extract_min() {
+    public void extract_min() {
         Binomial helpheap = new Binomial();
-        BinomialNode min = find_min();
-        BinomialNode temp = min.child;
-        BinomialNode current = root;
-        BinomialNode help = root;
-        //jos juuri ei ole pieni, etsitään sisarista pienintä arvoa
+        Binomialnode min = find_min();
+        Binomialnode val = min.child;
+        Binomialnode curr = root;
+        Binomialnode help = root;
+
+        //jos juuri ei ole minimi, etsitään sen sisaruksista pienintä arvoa
         if (root.value != min.value) {
             while (help.sibling.value != min.value) {
                 help = help.sibling;
             }
             help = help.sibling.sibling;
         }
-        //jos juuri on pienin, se poistetaan ja sisaresta tulee uusi juuri
+        //jos juuri on pienin value, poistetaan se ja tehdään sen sisaruksista uuden keon juuri.
         if (root.value == min.value) {
             root = root.sibling;
         }
 
+        //tapaus, jossa pienemmällä arvolla on lapsia. järjestetään keko apukeon avulla
         if (min.child != null) {
             /*
              * Vaihdetaan alipuun järjestys
              */
-            while (temp != null) {
-                BinomialNode next = temp.sibling;
-                temp.sibling = helpheap.root;
-                helpheap.root = temp;
-                temp = next;
+            while (val != null) {
+                Binomialnode next = val.sibling;
+                val.sibling = helpheap.root;
+                helpheap.root = val;
+                val = next;
             }
 
-            Binomial newer = union(this, helpheap);
-            this.root = newer.root;
+            Binomial newheap = union(this, helpheap);
+            this.root = newheap.root;
         }
     }
+     public void link(Binomialnode y, Binomialnode z) {
+        y.parent = z;
+        y.sibling = z.child;
+        z.child = y;
+        z.degree++;
+    }
+     
+
      //luodaan kahden binomisolmun välille parent-child-yhteys
-      public void binomial_link(BinomialNode y, BinomialNode z) {
+      public void binomial_link(Binomialnode y, Binomialnode z) {
         y.parent = z;
         y.sibling = z.child;
         z.child = y;
@@ -120,10 +111,10 @@ public Binomial union(Binomial h1, Binomial h2) {
         if (h.root == null) {
             return h;
         }
-        BinomialNode prev_x = null;
-        BinomialNode x = h.root;
-        BinomialNode next_x = x.sibling;
-        //yhdistetään keot ja tarkisteetaan ettei ole kahta samanasteista puuta
+        Binomialnode prev_x = null;
+        Binomialnode x = h.root;
+        Binomialnode next_x = x.sibling;
+        //yhdistetään keot ja tarkistetaan ettei ole kahta samanasteista puuta
         while (next_x != null) {
             if (x.degree != next_x.degree || (next_x.sibling != null) && (next_x.sibling.degree == x.degree)) {
                 prev_x = x;
@@ -147,9 +138,9 @@ public Binomial union(Binomial h1, Binomial h2) {
         return h;
     }
 
- BinomialNode merge(Binomial h1, Binomial h2) {
-        BinomialNode node1 = null;
-        BinomialNode node2 = null;
+ Binomialnode merge(Binomial h1, Binomial h2) {
+        Binomialnode node1 = null;
+        Binomialnode node2 = null;
 
         if (h1 != null && h1.root != null) {
             node1 = h1.root;
@@ -162,7 +153,7 @@ public Binomial union(Binomial h1, Binomial h2) {
         } else if (node2 == null) {
             return node1;
         }
-        BinomialNode h;
+        Binomialnode h;
         if (node1.degree < node2.degree) {
             h = node1;
             node1 = node1.sibling;
@@ -170,7 +161,7 @@ public Binomial union(Binomial h1, Binomial h2) {
             h = node2;
             node2 = node2.sibling;
         }
-        BinomialNode curr = h;
+        Binomialnode curr = h;
         while (node1 != null && node2 != null) {
             if (node1.degree < node2.degree) {
                 curr.sibling = node1;
@@ -193,7 +184,7 @@ public Binomial union(Binomial h1, Binomial h2) {
 public String toString() {
         String result = "";
 
-        BinomialNode x = root;
+        Binomialnode x = root;
         while (x != null) {
             result += x.printTree(0);
             x = x.sibling;

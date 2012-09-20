@@ -3,6 +3,8 @@ package main;
 
 
 
+
+
 import org.junit.*;
 
 
@@ -13,26 +15,12 @@ import org.junit.*;
 public class BinomialTest {
     
     Binomial heap;
-    public BinomialTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass()throws Exception { 
-    }
-    
-    @AfterClass
-    public static void tearDownClass()throws Exception { 
-    }
     
     @Before
     public void setUp() {
         heap = new Binomial();
-    
     }
     
-    @After
-    public void tearDown() {
-    }
     @Test
     public void insertTest(){
         long start = System.currentTimeMillis();

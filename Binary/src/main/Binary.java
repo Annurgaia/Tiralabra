@@ -9,7 +9,7 @@ package main;
  * @author annahietanen
  */
 public class Binary {
- 
+
     int size;
     Binarynode root;
 
@@ -17,7 +17,7 @@ public class Binary {
         size = 0;
     }
     
-    //Lisää uuden solmun kekoon ja vaihtaa keon binäärimuotoon. Jos keko loppuun 0, lisätään solmu vasemmalle, muuten oikealle.
+    //Lisää uuden solmun kekoon ja vaihtaa keon binäärimuotoon. Jos keko loppuun 0, lisätään solmu vasemmalle, muuten rightlle.
    
     public void insert(int value) {
         Binarynode node = new Binarynode(value);
@@ -44,14 +44,15 @@ public class Binary {
         }
         heap_up(node);
     }
+
     //Poistaa solmun keosta. Keon järjestys tarkistetaan lopuksi heap_down().
-    public int delete() {
+     public int delete() {
         if (size == 1) {
             int helpvalue = root.value;
             root = null;
             return helpvalue;
         }
-        int returnable = root.value;
+        int returnedvalue = root.value;
 
         Binarynode help = root;
         help.value = root.value;
@@ -72,7 +73,7 @@ public class Binary {
 
         size--;
         heap_down();
-        return returnable;
+        return returnedvalue;
 
     }
     //Printataan keko.
@@ -85,6 +86,7 @@ public class Binary {
             print_heap(root.right);
         }
     }
+
       //Niin kauan kuin solmun avain on pienempi kuin vanhempansa, solmun alkio ja solmun vanhemman alkio vaihtavat toistensa kanssa paikkaa.
 private void heap_up(Binarynode node) {
         if (node == root) {
@@ -103,7 +105,7 @@ private void heap_up(Binarynode node) {
 
     }
 
-//Väärässä paikassa oleva alkio siirretään oikealle paikalle. Jos solmun avain on suurempi kuin vähintään toinen sen lasten avaimista, siirretään alaspäin. 
+//Väärässä paikassa oleva alkio siirretään rightlle paikalle. Jos solmun avain on suurempi kuin vähintään toinen sen lasten avaimista, siirretään alaspäin. 
 // Kun alkio löytää paikkansa lopetetaan siirto alaspäin ja keon järjestys on valmis.
 private void heap_down() {
         Binarynode node = root;
@@ -125,7 +127,6 @@ private void heap_down() {
             }
             node = help;
         }
-    
-}
+    }
 }
     

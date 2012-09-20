@@ -8,18 +8,18 @@ package main;
  *
  * @author annahietanen
  */
-public class BinomialNode {
+public class Binomialnode {
     
-int value;
+    int value;
     int degree;
-    BinomialNode sibling;
-    BinomialNode parent;
-    BinomialNode child;
+    Binomialnode sibling;
+    Binomialnode parent;
+    Binomialnode child;
 
-    public BinomialNode() {
+    public Binomialnode() {
     }
 
-    public BinomialNode(int value) {
+    public Binomialnode(int value) {
         this.value = value;
     }
 
@@ -31,7 +31,7 @@ int value;
         }
         print = print + toString() + "\n";
 
-        BinomialNode a = child;
+        Binomialnode a = child;
         while (a != null) {
             print = print + a.printTree(depth + 1);
             a = a.sibling;
