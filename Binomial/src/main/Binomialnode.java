@@ -19,10 +19,19 @@ public class Binomialnode {
     public Binomialnode() {
     }
 
+    /**
+     *
+     * @param value
+     */
     public Binomialnode(int value) {
         this.value = value;
     }
 
+    /**
+     *
+     * @param depth
+     * @return
+     */
     public String printTree(int depth) {
         String print = "";
 

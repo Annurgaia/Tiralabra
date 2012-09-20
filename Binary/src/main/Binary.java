@@ -17,8 +17,11 @@ public class Binary {
         size = 0;
     }
     
-    //Lisää uuden solmun kekoon ja vaihtaa keon binäärimuotoon. Jos keko loppuun 0, lisätään solmu vasemmalle, muuten rightlle.
    
+    /**
+     *Lisää uuden solmun kekoon ja vaihtaa keon binäärimuotoon. Jos keko loppuun 0, lisätään solmu vasemmalle, muuten oikealle.
+     * @param value
+     */
     public void insert(int value) {
         Binarynode node = new Binarynode(value);
         size++;
@@ -45,8 +48,12 @@ public class Binary {
         heap_up(node);
     }
 
-    //Poistaa solmun keosta. Keon järjestys tarkistetaan lopuksi heap_down().
-     public int delete() {
+    
+     /**
+     *Poistaa solmun keosta. Keon järjestys tarkistetaan lopuksi heap_down().
+     * @return
+     */
+    public int delete() {
         if (size == 1) {
             int helpvalue = root.value;
             root = null;
@@ -76,8 +83,12 @@ public class Binary {
         return returnedvalue;
 
     }
-    //Printataan keko.
-      public void print_heap(Binarynode root) {
+   
+      /**
+     *Printataan keko.
+     * @param root
+     */
+    public void print_heap(Binarynode root) {
         System.out.println(root.value);
         if (root.left != null) {
             print_heap(root.left);
@@ -105,7 +116,7 @@ private void heap_up(Binarynode node) {
 
     }
 
-//Väärässä paikassa oleva alkio siirretään rightlle paikalle. Jos solmun avain on suurempi kuin vähintään toinen sen lasten avaimista, siirretään alaspäin. 
+//Väärässä paikassa oleva alkio siirretään oikealle paikalle. Jos solmun avain on suurempi kuin vähintään toinen sen lasten avaimista, siirretään alaspäin. 
 // Kun alkio löytää paikkansa lopetetaan siirto alaspäin ja keon järjestys on valmis.
 private void heap_down() {
         Binarynode node = root;

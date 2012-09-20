@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="0" hostname="Annas-MacBook-Pro.local" name="main.BinaryTest" tests="2" time="46.075" timestamp="2012-09-20T21:31:47">
+<testsuite errors="0" failures="0" hostname="Annas-MacBook-Pro.local" name="main.FibonacciTest" tests="4" time="0.169" timestamp="2012-09-20T21:34:39">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -8,12 +8,13 @@
     <property name="libs.jsf20.maven-pom" value="" />
     <property name="libs.j2me_ant_ext.javadoc" value="" />
     <property name="libs.junit.javadoc" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/docs/junit-3.8.2-api.zip" />
+    <property name="ant.file.Fibonacci" value="/Users/annahietanen/NetBeansProjects/Fibonacci/build.xml" />
     <property name="libs.nokiaS80-ant-utils.javadoc" value="" />
     <property name="ant.core.lib" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant.jar" />
     <property name="libs.jakarta_slide_ant_webdav.javadoc" value="" />
     <property name="javadoc.windowtitle" value="" />
     <property name="libs.jsp-compilation.javadoc" value="" />
-    <property name="user.dir" value="/Users/annahietanen/NetBeansProjects/Binary" />
+    <property name="user.dir" value="/Users/annahietanen/NetBeansProjects/Fibonacci" />
     <property name="com.apple.mrj.application.apple.menu.about.name" value="NetBeans" />
     <property name="libs.hibernate-persistence.javadoc" value="" />
     <property name="libs.JMUnit4CLDC10.javadoc" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/mobility/modules/docs/jmunit-1.2.1-api.zip" />
@@ -64,7 +65,7 @@
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.BinaryTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/annahietanen/NetBeansProjects/Binary/build/test/results/TEST-main.BinaryTest.xml crashfile=/Users/annahietanen/NetBeansProjects/Binary/build/junitvmwatcher6814296630807600435.properties propsfile=/Users/annahietanen/NetBeansProjects/Binary/build/junit6591204849038014575.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.FibonacciTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/annahietanen/NetBeansProjects/Fibonacci/build/test/results/TEST-main.FibonacciTest.xml crashfile=/Users/annahietanen/NetBeansProjects/Fibonacci/build/junitvmwatcher6107508733278061674.properties propsfile=/Users/annahietanen/NetBeansProjects/Fibonacci/build/junit7999543301398979201.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="libs.Java-EE-GlassFish-v3.wsjwsdp" value="" />
@@ -87,7 +88,6 @@
     <property name="build.compiler.emacs" value="true" />
     <property name="libs.javaee-web-api-6.0.src" value="" />
     <property name="libs.ejb3-persistence.src" value="" />
-    <property name="ant.file.Binary" value="/Users/annahietanen/NetBeansProjects/Binary/build.xml" />
     <property name="libs.Java-EE-GlassFish-v3.javadoc" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/docs/javaee6-doc-api.zip" />
     <property name="libs.jsp-compilation-syscp.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/servlet3.0-jsp2.2-api.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/glassfish-jspparser-3.0.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/standard.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-2_1/jsf-impl.jar" />
     <property name="libs.nokiaS80-ant-utils.src" value="" />
@@ -97,8 +97,8 @@
     <property name="libs.Comet-GlassFish-v3.maven-pom" value="" />
     <property name="libs.groovy-all.src" value="" />
     <property name="netbeans.dynamic.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/core.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/org-openide-filesystems.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/locale/core_ja.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/locale/core_pt_BR.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/locale/core_ru.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/locale/core_zh_CN.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/locale/org-openide-filesystems_ja.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/locale/org-openide-filesystems_pt_BR.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/locale/org-openide-filesystems_ru.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/core/locale/org-openide-filesystems_zh_CN.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/org-netbeans-upgrader.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/locale/core_nb.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/locale/core_nb_ja.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/locale/core_nb_pt_BR.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/locale/core_nb_ru.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/locale/core_nb_zh_CN.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/locale/org-netbeans-upgrader_ja.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/locale/org-netbeans-upgrader_pt_BR.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/locale/org-netbeans-upgrader_ru.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/nb/core/locale/org-netbeans-upgrader_zh_CN.jar" />
+    <property name="ant.file.type.Fibonacci" value="file" />
     <property name="libs.cdc-agui-swing-layout.maven-pom" value="" />
-    <property name="ant.file.type.Binary-impl" value="file" />
     <property name="libs.cdc-pp-awt-layout.src" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/mobility/sources/cdc-pp-awt-layout-src.zip" />
     <property name="java.vm.specification.version" value="1.0" />
     <property name="libs.jakarta_slide_ant_webdav.src" value="" />
@@ -136,6 +136,7 @@
     <property name="ant.home" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant" />
     <property name="libs.junit_4.src" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/docs/junit-4.10-sources.jar" />
     <property name="libs.testng.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/modules/ext/testng-6.5.1-dist.jar" />
+    <property name="ant.file.Fibonacci-impl" value="/Users/annahietanen/NetBeansProjects/Fibonacci/nbproject/build-impl.xml" />
     <property name="libs.absolutelayout.maven-pom" value="" />
     <property name="ant.java.version" value="1.6" />
     <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
@@ -146,7 +147,7 @@
     <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
     <property name="libs.PostgreSQLDriver.src" value="" />
     <property name="sun.arch.data.model" value="64" />
-    <property name="basedir" value="/Users/annahietanen/NetBeansProjects/Binary" />
+    <property name="basedir" value="/Users/annahietanen/NetBeansProjects/Fibonacci" />
     <property name="libs.jpa20-persistence.maven-pom" value="" />
     <property name="jar.compress" value="false" />
     <property name="libs.jstl11.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/standard.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jstl.jar" />
@@ -190,14 +191,13 @@
     <property name="libs.JWSAntTasks.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/extra/org-netbeans-modules-javawebstart-anttasks.jar" />
     <property name="libs.spring-framework300.src" value="" />
     <property name="libs.ant-contrib.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/mobility/modules/ext/ant-contrib-1.0b3.jar" />
-    <property name="empty.dir" value="/Users/annahietanen/NetBeansProjects/Binary/build/empty" />
+    <property name="empty.dir" value="/Users/annahietanen/NetBeansProjects/Fibonacci/build/empty" />
     <property name="version-output" value="java version &quot;1.6" />
     <property name="javadoc.preview" value="true" />
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
     <property name="libs.jpa20-persistence.javadoc" value="" />
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home" />
     <property name="libs.ojec-ant-utils.javadoc" value="" />
-    <property name="ant.file.Binary-impl" value="/Users/annahietanen/NetBeansProjects/Binary/nbproject/build-impl.xml" />
     <property name="libs.jsp-compilation.src" value="" />
     <property name="libs.spring-webmvc.src" value="" />
     <property name="libs.ant-contrib.javadoc" value="" />
@@ -238,10 +238,9 @@
     <property name="sun.java2d.noddraw" value="true" />
     <property name="libs.jsp-compiler.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/ant/extra/jspcompile.jar" />
     <property name="javac.processorpath" value="" />
-    <property name="ant.file.type.Binary" value="file" />
     <property name="libs.spring-webmvc.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/spring/spring-webmvc-2.5.6.SEC03.jar" />
     <property name="javac.compilerargs" value="" />
-    <property name="ant.file" value="/Users/annahietanen/NetBeansProjects/Binary/build.xml" />
+    <property name="ant.file" value="/Users/annahietanen/NetBeansProjects/Fibonacci/build.xml" />
     <property name="libs.beans-binding.maven-pom" value="" />
     <property name="libs.jsf12.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/commons-beanutils.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/commons-collections.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/commons-digester.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/commons-logging.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/jsf-api.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/jsf-impl.jar" />
     <property name="sun.awt.exception.handler" value="apple.awt.CToolkit$EventQueueExceptionHandler" />
@@ -257,7 +256,7 @@
     <property name="javadoc.additionalparam" value="" />
     <property name="java.io.tmpdir" value="/var/folders/jd/jkbv2wyd7y9_xhb7cmpbzwg80000gn/T/" />
     <property name="java.vendor.url" value="http://www.apple.com/" />
-    <property name="endorsed.classpath.cmd.line.arg" value="-Xbootclasspath/p:&apos;/Users/annahietanen/NetBeansProjects/Binary/${endorsed.classpath}&apos;" />
+    <property name="endorsed.classpath.cmd.line.arg" value="-Xbootclasspath/p:&apos;/Users/annahietanen/NetBeansProjects/Fibonacci/${endorsed.classpath}&apos;" />
     <property name="junit.available" value="true" />
     <property name="libs.jsp-compiler.src" value="" />
     <property name="mrj.build" value="11M3811" />
@@ -270,9 +269,9 @@
     <property name="ap.processors.internal" value="" />
     <property name="meta.inf.dir" value="src/META-INF" />
     <property name="javadoc.encoding.used" value="UTF-8" />
-    <property name="dist.jar" value="dist/Binary.jar" />
+    <property name="dist.jar" value="dist/Fibonacci.jar" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
-    <property name="ant.project.name" value="Binary" />
+    <property name="ant.project.name" value="Fibonacci" />
     <property name="netbeans.hash.code" value="unique=NB_JAVA_WEBCOMMON_WEBEE_MOB_CND_GROOVY_PHP_GFMOD02d874e83-33d3-422f-a093-cb14d1790af2_bdf6ad15-b002-4a70-a470-f218aee17894" />
     <property name="netbeans.default_userdir_root" value="/Users/annahietanen/Library/Application Support/NetBeans" />
     <property name="libs.jsp-compilation-syscp.maven-pom" value="" />
@@ -313,6 +312,7 @@
     <property name="libs.eclipselinkmodelgen.maven-pom" value="" />
     <property name="awt.nativeDoubleBuffering" value="true" />
     <property name="libs.jsp-compilation-syscp.javadoc" value="" />
+    <property name="ant.file.type.Fibonacci-impl" value="file" />
     <property name="libs.junit.maven-pom" value="" />
     <property name="libs.eclipselinkmodelgen.javadoc" value="" />
     <property name="libs.metro.javadoc" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/docs/metro-1.4-doc.zip" />
@@ -322,7 +322,7 @@
     <property name="libs.testng.maven-pom" value="" />
     <property name="libs.jaxb.src" value="" />
     <property name="libs.Java-EE-GlassFish-v3.wsgenerate" value="" />
-    <property name="work.dir" value="/Users/annahietanen/NetBeansProjects/Binary" />
+    <property name="work.dir" value="/Users/annahietanen/NetBeansProjects/Fibonacci" />
     <property name="libs.cdc-ant-utils.src" value="" />
     <property name="libs.jaxb.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb-impl.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb-xjc.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb1-impl.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/activation.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/api/jaxb-api.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/api/jsr173_1.0_api.jar" />
     <property name="do.depend" value="false" />
@@ -342,9 +342,9 @@
     <property name="junit.forkmode" value="perTest" />
     <property name="libs.ojec-ant-utils.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/mobility/modules/ext/org-netbeans-modules-j2me-cdc-project-ojec.jar" />
     <property name="libs.spring-framework.maven-pom" value="" />
-    <property name="sun.boot.class.path" value="/Users/annahietanen/NetBeansProjects/Binary/${endorsed.classpath}:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar" />
+    <property name="sun.boot.class.path" value="/Users/annahietanen/NetBeansProjects/Fibonacci/${endorsed.classpath}:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar" />
     <property name="javac.target" value="1.6" />
-    <property name="built-jar.properties" value="/Users/annahietanen/NetBeansProjects/Binary/build/built-jar.properties" />
+    <property name="built-jar.properties" value="/Users/annahietanen/NetBeansProjects/Fibonacci/build/built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
     <property name="annotation.processing.enabled" value="true" />
@@ -400,7 +400,7 @@
     <property name="libs.metro.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/activation.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-api.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-extra-api.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-extra.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-rt.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/metro/webservices-tools.jar" />
     <property name="libs.restlib.maven-pom" value="" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
-    <property name="java.class.path" value="/Users/annahietanen/NetBeansProjects/Binary/build/classes:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/modules/ext/junit-4.10.jar:/Users/annahietanen/NetBeansProjects/Binary/build/test/classes:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant-launcher.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant-junit.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant-junit4.jar" />
+    <property name="java.class.path" value="/Users/annahietanen/NetBeansProjects/Fibonacci/build/classes:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/platform/modules/ext/junit-4.10.jar:/Users/annahietanen/NetBeansProjects/Fibonacci/build/test/classes:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant-launcher.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant-junit.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant-junit4.jar" />
     <property name="do.mkdist" value="true" />
     <property name="libs.absolutelayout.src" value="" />
     <property name="libs.jpa20-persistence.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/modules/ext/eclipselink/javax.persistence-2.0.3.jar" />
@@ -432,7 +432,7 @@
     <property name="libs.jsf12.maven-pom" value="" />
     <property name="libs.junit.src" value="" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
-    <property name="main.class" value="main.Binomial" />
+    <property name="main.class" value="fibonacci.Fibonacci" />
     <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
     <property name="libs.jsp-compilation.classpath" value="/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/servlet3.0-jsp2.2-api.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/glassfish-jspparser-3.0.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-2_1/jsf-api.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jstl.jar:/Applications/NetBeans/NetBeans 7.2.app/Contents/Resources/NetBeans/java/ant/lib/ant-launcher.jar" />
@@ -444,23 +444,14 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="apple.awt.CToolkit" />
   </properties>
-  <testcase classname="main.BinaryTest" name="insertTest" time="0.075" />
-  <testcase classname="main.BinaryTest" name="heapTest" time="45.867" />
-  <testcase classname="junit.framework.TestSuite" name="main.BinaryTest" time="0.0">
-    <error message="Java heap space" type="java.lang.OutOfMemoryError">java.lang.OutOfMemoryError: Java heap space
-	at java.lang.String.concat(String.java:2003)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:193)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
-	at sun.misc.Launcher$ExtClassLoader.findClass(Launcher.java:229)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:295)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
-</error>
-  </testcase>
-  <system-out><![CDATA[Time spent adding 100 000: 39.0ms.
-Time spent deleting 100 000: 34.0ms.
+  <testcase classname="main.FibonacciTest" name="insertTest" time="0.08" />
+  <testcase classname="main.FibonacciTest" name="smallInsertTest" time="0.0010" />
+  <testcase classname="main.FibonacciTest" name="insertAndDeleteTest" time="0.019" />
+  <testcase classname="main.FibonacciTest" name="reverseInsertAndDeleteTest" time="0.0070" />
+  <system-out><![CDATA[Time spent adding 100 000: 8.0ms.
+Time spent deleteting 100 000: 69.0ms.
+Time spent: 18.0ms
+Time spent in reverse: 7.0ms
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -18,11 +18,19 @@ public Fibonacci() {
         size = 0;
 }
 
-public Fibonacci(Fibonaccinode node) {
+    /**
+     *
+     * @param node
+     */
+    public Fibonacci(Fibonaccinode node) {
         min = node;
         size = 1;
 }
-public void insert(int value) {
+    /**
+     *
+     * @param value
+     */
+    public void insert(int value) {
 
         Fibonaccinode x = new Fibonaccinode(value);
         x.degree = 0;
@@ -45,7 +53,12 @@ public void insert(int value) {
         size++;
     }       
 
-public void link(Fibonaccinode y, Fibonaccinode x) {
+    /**
+     *
+     * @param y
+     * @param x
+     */
+    public void link(Fibonaccinode y, Fibonaccinode x) {
      y.left.right = y.right;
         y.right.left = y.left;
         y.parent = x;
@@ -63,8 +76,14 @@ public void link(Fibonaccinode y, Fibonaccinode x) {
         y.mark = false;
     }    
 
-//combining two heaps
- public Fibonacci union(Fibonacci H1, Fibonacci H2) {
+
+    /**
+     *yhdistetään kaksi kekoa
+     * @param H1
+     * @param H2
+     * @return
+     */
+    public Fibonacci union(Fibonacci H1, Fibonacci H2) {
       Fibonacci H = new Fibonacci();        
         //tarkistetaan, ettei kummankaan keon minimi ole null        
         if ((H1 != null) && (H2 != null)) {            
@@ -91,7 +110,11 @@ public void link(Fibonaccinode y, Fibonaccinode x) {
         return H;
     }
  
- public Fibonaccinode extract_min() {
+    /**
+     *
+     * @return
+     */
+    public Fibonaccinode extract_min() {
      Fibonaccinode z = min;
         if (z != null) {
             int children = z.degree;
@@ -122,7 +145,10 @@ public void link(Fibonaccinode y, Fibonaccinode x) {
         return z;
     
  }
- public void consolidate() {
+    /**
+     *
+     */
+    public void consolidate() {
         int tableSize = ((int) Math.floor(Math.log(size) * logPhi)) + 1;
         Fibonaccinode[] table = new Fibonaccinode[tableSize];
         for (int j = 0; j < tableSize; j++) {
@@ -180,7 +206,12 @@ public void link(Fibonaccinode y, Fibonaccinode x) {
             }
         }
     }     
- public void decreaseKey(Fibonaccinode x, int k) {
+    /**
+     *
+     * @param x
+     * @param k
+     */
+    public void decreaseKey(Fibonaccinode x, int k) {
         if (k > x.value) {
             throw new IllegalArgumentException("You gave a bigger value!");
         }
@@ -196,6 +227,10 @@ public void link(Fibonaccinode y, Fibonaccinode x) {
         }
     }
 
+    /**
+     *
+     * @param y
+     */
     protected void cascadingCut(Fibonaccinode y) {
         Fibonaccinode z = y.parent;
         if (z != null) {
@@ -210,7 +245,12 @@ public void link(Fibonaccinode y, Fibonaccinode x) {
     }
 
     
-protected void cut(Fibonaccinode x, Fibonaccinode y) {
+    /**
+     *
+     * @param x
+     * @param y
+     */
+    protected void cut(Fibonaccinode x, Fibonaccinode y) {
         x.left.right = x.right;
         x.right.left = x.left;
         y.degree--;
@@ -230,6 +270,10 @@ protected void cut(Fibonaccinode x, Fibonaccinode y) {
     
     
     // poistetaan alkio kutsumalla metodeita decreaseKey ja extract_min  
+    /**
+     *
+     * @param x
+     */
     public void delete(Fibonaccinode x) {
         decreaseKey(x, Integer.MIN_VALUE);
         extract_min();

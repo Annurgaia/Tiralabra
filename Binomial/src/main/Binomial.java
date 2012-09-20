@@ -16,15 +16,27 @@ public class Binomial {
     Binomialnode root;
     int size;
 
+    /**
+     *
+     */
     public Binomial() {
     }
 
+    /**
+     *
+     * @param node
+     * @param size
+     */
     public Binomial(Binomialnode node, int size) {
         this.size = size;
         this.root = node;
     }
 
-//Luodaan uusi keko, joka sisältää uuden solmun. Unionin avulla yhdistetään alkuperäiseen kekoon.
+
+    /**
+     *Luodaan uusi keko, joka sisältää uuden solmun. Unionin avulla yhdistetään alkuperäiseen kekoon.
+     * @param value
+     */
     public void insert(int value) {
         Binomial heap1 = new Binomial();
         Binomialnode node = new Binomialnode(value);
@@ -39,7 +51,11 @@ public class Binomial {
         size++;
     }
 
-    //keon pienimmän arvon etsintä
+    
+    /**
+     *keon pienimmän arvon etsintä
+     * @return
+     */
     public Binomialnode find_min() {
         int value = Integer.MAX_VALUE;
         Binomialnode helpnode = root;
@@ -53,10 +69,14 @@ public class Binomial {
         }
         return min;
     }
+ 
+    /**
+     *ei toimi vieläkään kunnolla
+     */
     public void extract_min() {
         Binomial helpheap = new Binomial();
         Binomialnode min = find_min();
-        Binomialnode val = min.child;
+        Binomialnode temp = min.child;
         Binomialnode curr = root;
         Binomialnode help = root;
 
@@ -67,7 +87,7 @@ public class Binomial {
             }
             help = help.sibling.sibling;
         }
-        //jos juuri on pienin value, poistetaan se ja tehdään sen sisaruksista uuden keon juuri.
+        //jos juuri on pienin arvo, poistetaan se ja tehdään sen sisaruksista uuden keon juuri.
         if (root.value == min.value) {
             root = root.sibling;
         }
@@ -77,18 +97,23 @@ public class Binomial {
             /*
              * Vaihdetaan alipuun järjestys
              */
-            while (val != null) {
-                Binomialnode next = val.sibling;
-                val.sibling = helpheap.root;
-                helpheap.root = val;
-                val = next;
+            while (temp != null) {
+                Binomialnode next = temp.sibling;
+                temp.sibling = helpheap.root;
+                helpheap.root = temp;
+                temp = next;
             }
 
             Binomial newheap = union(this, helpheap);
             this.root = newheap.root;
         }
     }
-     public void link(Binomialnode y, Binomialnode z) {
+     /**
+     *
+     * @param y
+     * @param z
+     */
+    public void link(Binomialnode y, Binomialnode z) {
         y.parent = z;
         y.sibling = z.child;
         z.child = y;
@@ -96,15 +121,26 @@ public class Binomial {
     }
      
 
-     //luodaan kahden binomisolmun välille parent-child-yhteys
-      public void binomial_link(Binomialnode y, Binomialnode z) {
+    
+      /**
+     *luodaan kahden binomisolmun välille parent-child-yhteys
+     * @param y
+     * @param z
+     */
+    public void binomial_link(Binomialnode y, Binomialnode z) {
         y.parent = z;
         y.sibling = z.child;
         z.child = y;
         z.degree++;
     }
-      //yhdistetään kaksi kekoa toisiinsa mergellä
-public Binomial union(Binomial h1, Binomial h2) {
+      
+      /**
+     *yhdistetään kaksi kekoa toisiinsa mergellä
+     * @param h1
+     * @param h2
+     * @return
+     */
+    public Binomial union(Binomial h1, Binomial h2) {
         Binomial h = new Binomial();
         //valitaan juuri
         h.root = merge(h1, h2);
@@ -180,8 +216,12 @@ public Binomial union(Binomial h1, Binomial h2) {
         }
         return h;
     }
- //printataan puu
-public String toString() {
+ 
+    /**
+     *printataan puu
+     * @return
+     */
+    public String toString() {
         String result = "";
 
         Binomialnode x = root;
@@ -191,7 +231,11 @@ public String toString() {
         }
         return result;
     }
-//main
+
+    /**
+     *main
+     * @param args
+     */
     public static void main(String[] args) {
 
         Binomial binomialheap = new Binomial();

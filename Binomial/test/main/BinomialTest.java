@@ -1,10 +1,6 @@
 package main;
 
 
-
-
-
-
 import org.junit.*;
 
 
