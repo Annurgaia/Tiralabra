@@ -71,7 +71,7 @@ public class Binomial {
     public void extract_min() {
         Binomial helpheap = new Binomial();
         Binomialnode min = find_min();
-        Binomialnode val = min.child;
+        Binomialnode temp = min.child;
         Binomialnode curr = root;
         Binomialnode help = root;
 
@@ -92,15 +92,15 @@ public class Binomial {
             /*
              * Vaihdetaan alipuun järjestys
              */
-            while (val != null) {
-                Binomialnode next = val.sibling;
-                val.sibling = helpheap.root;
-                helpheap.root = val;
-                val = next;
+            while (temp != null) {
+                Binomialnode next = temp.sibling;
+                temp.sibling = helpheap.root;
+                helpheap.root = temp;
+                temp = next;
             }
 
-            Binomial uusi = union(this, helpheap);
-            this.root = uusi.root;
+            Binomial new1 = union(this, helpheap);
+            this.root = new1.root;
         }
     }
 
