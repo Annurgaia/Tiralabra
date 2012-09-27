@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="0" hostname="Annas-MacBook-Pro.local" name="main.BinaryTest" tests="2" time="46.075" timestamp="2012-09-20T21:31:47">
+<testsuite errors="0" failures="0" hostname="Annas-MacBook-Pro.local" name="main.BinaryTest" tests="2" time="0.628" timestamp="2012-09-27T21:43:08">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -64,7 +64,7 @@
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.BinaryTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/annahietanen/NetBeansProjects/Binary/build/test/results/TEST-main.BinaryTest.xml crashfile=/Users/annahietanen/NetBeansProjects/Binary/build/junitvmwatcher6814296630807600435.properties propsfile=/Users/annahietanen/NetBeansProjects/Binary/build/junit6591204849038014575.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.BinaryTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/annahietanen/NetBeansProjects/Binary/build/test/results/TEST-main.BinaryTest.xml crashfile=/Users/annahietanen/NetBeansProjects/Binary/build/junitvmwatcher3583104936527770792.properties propsfile=/Users/annahietanen/NetBeansProjects/Binary/build/junit2356915848117508828.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="libs.Java-EE-GlassFish-v3.wsjwsdp" value="" />
@@ -444,23 +444,11 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="apple.awt.CToolkit" />
   </properties>
-  <testcase classname="main.BinaryTest" name="insertTest" time="0.075" />
-  <testcase classname="main.BinaryTest" name="heapTest" time="45.867" />
-  <testcase classname="junit.framework.TestSuite" name="main.BinaryTest" time="0.0">
-    <error message="Java heap space" type="java.lang.OutOfMemoryError">java.lang.OutOfMemoryError: Java heap space
-	at java.lang.String.concat(String.java:2003)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:193)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
-	at sun.misc.Launcher$ExtClassLoader.findClass(Launcher.java:229)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:295)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
-</error>
-  </testcase>
-  <system-out><![CDATA[Time spent adding 100 000: 39.0ms.
-Time spent deleting 100 000: 34.0ms.
+  <testcase classname="main.BinaryTest" name="insertTest" time="0.098" />
+  <testcase classname="main.BinaryTest" name="heapTest" time="0.477" />
+  <system-out><![CDATA[Time spent adding 100 000: 61.0ms.
+Time spent deleting 100 000: 35.0ms.
+Time spent: 477ms = 0.477s
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

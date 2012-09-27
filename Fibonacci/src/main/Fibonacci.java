@@ -9,6 +9,7 @@ package main;
  * @author annahietanen
  */
 public class Fibonacci {
+    //Puun, jolla on n lasta, suurin mahdollinen aste r on log_phi(n). (r <= log_logphi(n))
     private static final double logPhi = 1.0 / Math.log((1.0 + Math.sqrt(5.0)) / 2.0);
     Fibonaccinode min;
     int size;
@@ -27,7 +28,7 @@ public Fibonacci() {
         size = 1;
 }
     /**
-     *
+     *Lisätään uusi solmu kekoon. Uudesta solmusta tehdään uusi yhden solmun kokoinen alipuu. Aikavaativuudeltaan vakio
      * @param value
      */
     public void insert(int value) {
@@ -54,7 +55,7 @@ public Fibonacci() {
     }       
 
     /**
-     *
+     *Poistetaan y keon juurilistasta (this), tehdään y_stä x:n lapsi ja kasvatetaan x:n astetta
      * @param y
      * @param x
      */
@@ -78,7 +79,8 @@ public Fibonacci() {
 
 
     /**
-     *yhdistetään kaksi kekoa
+     *Tehdään uusi keko, johon yhdistetään kaksi vanhaa kekoa. Tehdään toisen
+     *minimistä uuden keon minimi ja päivitetään keon koko.
      * @param H1
      * @param H2
      * @return
@@ -111,7 +113,10 @@ public Fibonacci() {
     }
  
     /**
-     *
+     *Poistetaan miminijuuri. Minimijuuren lapsista tulee uusien puiden juuria. Sen jälkeen
+     * päivitetään pointteri osoittamaan minimiin. Jos kahdella juurella on sama aste,
+     * tehdään toisesta lapsi siten, että pienempi pysyy juurena ja aste kasvaa yhdellä.
+     * Toistetaan kunnes kaikilla eri aste. 
      * @return
      */
     public Fibonaccinode extract_min() {
@@ -146,7 +151,7 @@ public Fibonacci() {
     
  }
     /**
-     *
+     *Etsitään uusi minimi. Metodin läpikäynnin jälkeen keossa on maksimissaan yksi jokaista kokoa olevia alipuita.
      */
     public void consolidate() {
         int tableSize = ((int) Math.floor(Math.log(size) * logPhi)) + 1;
@@ -228,7 +233,10 @@ public Fibonacci() {
     }
 
     /**
-     *
+     * Otetaan solmu, pienennetään sen arvoa. Jos uusi arvo on pienempi kuin sen
+     * vanhempi, leikataan pienempi solmu irti vanhemmastaan. Jos vanhempi ei ole
+     * juuri, merkataan se. Jos se on jo merkattu, leikataan sekin irti ja sen vanhempi
+     * merkataan.  Jatketaan tätä kunnes löydetään juuri/merkkaamaton solmu
      * @param y
      */
     protected void cascadingCut(Fibonaccinode y) {
@@ -246,7 +254,7 @@ public Fibonacci() {
 
     
     /**
-     *
+     * Leikataan solmu irti puusta.
      * @param x
      * @param y
      */

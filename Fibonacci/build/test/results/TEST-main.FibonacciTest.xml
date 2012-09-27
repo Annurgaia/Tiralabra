@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Annas-MacBook-Pro.local" name="main.FibonacciTest" tests="4" time="0.169" timestamp="2012-09-20T21:34:39">
+<testsuite errors="0" failures="0" hostname="Annas-MacBook-Pro.local" name="main.FibonacciTest" tests="4" time="0.262" timestamp="2012-09-27T21:42:26">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -65,7 +65,7 @@
     <property name="manifest.available+main.class" value="true" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.FibonacciTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/annahietanen/NetBeansProjects/Fibonacci/build/test/results/TEST-main.FibonacciTest.xml crashfile=/Users/annahietanen/NetBeansProjects/Fibonacci/build/junitvmwatcher6107508733278061674.properties propsfile=/Users/annahietanen/NetBeansProjects/Fibonacci/build/junit7999543301398979201.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner main.FibonacciTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/annahietanen/NetBeansProjects/Fibonacci/build/test/results/TEST-main.FibonacciTest.xml crashfile=/Users/annahietanen/NetBeansProjects/Fibonacci/build/junitvmwatcher7236088671894149787.properties propsfile=/Users/annahietanen/NetBeansProjects/Fibonacci/build/junit2474047828869714504.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="libs.Java-EE-GlassFish-v3.wsjwsdp" value="" />
@@ -444,13 +444,13 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="apple.awt.CToolkit" />
   </properties>
-  <testcase classname="main.FibonacciTest" name="insertTest" time="0.08" />
-  <testcase classname="main.FibonacciTest" name="smallInsertTest" time="0.0010" />
-  <testcase classname="main.FibonacciTest" name="insertAndDeleteTest" time="0.019" />
-  <testcase classname="main.FibonacciTest" name="reverseInsertAndDeleteTest" time="0.0070" />
-  <system-out><![CDATA[Time spent adding 100 000: 8.0ms.
-Time spent deleteting 100 000: 69.0ms.
-Time spent: 18.0ms
+  <testcase classname="main.FibonacciTest" name="insertTest" time="0.094" />
+  <testcase classname="main.FibonacciTest" name="smallInsertTest" time="0.0" />
+  <testcase classname="main.FibonacciTest" name="insertAndDeleteTest" time="0.013" />
+  <testcase classname="main.FibonacciTest" name="reverseInsertAndDeleteTest" time="0.0080" />
+  <system-out><![CDATA[Time spent adding 100 000: 10.0ms.
+Time spent deleteting 100 000: 83.0ms.
+Time spent: 13.0ms
 Time spent in reverse: 7.0ms
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

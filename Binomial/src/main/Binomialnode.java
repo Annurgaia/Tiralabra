@@ -16,6 +16,9 @@ public class Binomialnode {
     Binomialnode parent;
     Binomialnode child;
 
+    /**
+     *
+     */
     public Binomialnode() {
     }
 
@@ -30,7 +33,7 @@ public class Binomialnode {
     /**
      *
      * @param depth
-     * @return
+     * @return 
      */
     public String printTree(int depth) {
         String print = "";
@@ -49,6 +52,10 @@ public class Binomialnode {
         return print;
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString() {
         return ("Value: " + value + " degree: " + degree);
     }
