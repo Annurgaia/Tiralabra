@@ -21,7 +21,7 @@ public Fibonacci() {
 
     /**
      *
-     * @param node
+     * @param Fibonaccinode node
      */
     public Fibonacci(Fibonaccinode node) {
         min = node;
@@ -29,7 +29,7 @@ public Fibonacci() {
 }
     /**
      *Lisätään uusi solmu kekoon. Uudesta solmusta tehdään uusi yhden solmun kokoinen alipuu. Aikavaativuudeltaan vakio
-     * @param value
+     * @param int value
      */
     public void insert(int value) {
 
@@ -56,8 +56,8 @@ public Fibonacci() {
 
     /**
      *Poistetaan y keon juurilistasta (this), tehdään y_stä x:n lapsi ja kasvatetaan x:n astetta
-     * @param y
-     * @param x
+     * @param Fibonaccinode y
+     * @param Fibonaccinode x
      */
     public void link(Fibonaccinode y, Fibonaccinode x) {
      y.left.right = y.right;
@@ -81,9 +81,9 @@ public Fibonacci() {
     /**
      *Tehdään uusi keko, johon yhdistetään kaksi vanhaa kekoa. Tehdään toisen
      *minimistä uuden keon minimi ja päivitetään keon koko.
-     * @param H1
-     * @param H2
-     * @return
+     * @param Fibonacci H1
+     * @param Fibonacci H2
+     * @return H
      */
     public Fibonacci union(Fibonacci H1, Fibonacci H2) {
       Fibonacci H = new Fibonacci();        
@@ -117,7 +117,7 @@ public Fibonacci() {
      * päivitetään pointteri osoittamaan minimiin. Jos kahdella juurella on sama aste,
      * tehdään toisesta lapsi siten, että pienempi pysyy juurena ja aste kasvaa yhdellä.
      * Toistetaan kunnes kaikilla eri aste. 
-     * @return
+     * @return z
      */
     public Fibonaccinode extract_min() {
      Fibonaccinode z = min;
@@ -212,9 +212,12 @@ public Fibonacci() {
         }
     }     
     /**
-     *
-     * @param x
-     * @param k
+     *Otetaan solmu, pienennetään sen arvoa. Jos uusi arvo on pienempi kuin sen
+     * vanhempi, leikataan pienempi solmu irti vanhemmastaan. Jos vanhempi ei ole
+     * juuri, merkataan se. Jos se on jo merkattu, leikataan sekin irti ja sen vanhempi
+     * merkataan.  Jatketaan tätä kunnes löydetään juuri/merkkaamaton solmu 
+     * @param Fibonaccinode x
+     * @param Fibonaccinode k
      */
     public void decreaseKey(Fibonaccinode x, int k) {
         if (k > x.value) {
@@ -232,13 +235,7 @@ public Fibonacci() {
         }
     }
 
-    /**
-     * Otetaan solmu, pienennetään sen arvoa. Jos uusi arvo on pienempi kuin sen
-     * vanhempi, leikataan pienempi solmu irti vanhemmastaan. Jos vanhempi ei ole
-     * juuri, merkataan se. Jos se on jo merkattu, leikataan sekin irti ja sen vanhempi
-     * merkataan.  Jatketaan tätä kunnes löydetään juuri/merkkaamaton solmu
-     * @param y
-     */
+    
     protected void cascadingCut(Fibonaccinode y) {
         Fibonaccinode z = y.parent;
         if (z != null) {
@@ -255,8 +252,8 @@ public Fibonacci() {
     
     /**
      * Leikataan solmu irti puusta.
-     * @param x
-     * @param y
+     * @param Fibonaccinode x
+     * @param Fibonaccinode y
      */
     protected void cut(Fibonaccinode x, Fibonaccinode y) {
         x.left.right = x.right;
@@ -277,10 +274,10 @@ public Fibonacci() {
     }    
     
     
-    // poistetaan alkio kutsumalla metodeita decreaseKey ja extract_min  
+   
     /**
-     *
-     * @param x
+     *poistetaan alkio kutsumalla metodeita decreaseKey ja extract_min  
+     * @param Fibonaccinode x
      */
     public void delete(Fibonaccinode x) {
         decreaseKey(x, Integer.MIN_VALUE);

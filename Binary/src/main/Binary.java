@@ -20,7 +20,7 @@ public class Binary {
    
     /**
      *Lisää uuden solmun kekoon ja vaihtaa keon binäärimuotoon. Jos keko loppuun 0, lisätään solmu vasemmalle, muuten oikealle.
-     * @param value
+     * @param int value
      */
     public void insert(int value) {
         Binarynode node = new Binarynode(value);
@@ -51,7 +51,7 @@ public class Binary {
     
      /**
      *Poistaa solmun keosta. Keon järjestys tarkistetaan lopuksi heap_down().
-     * @return
+     * @return returnedvalue
      */
     public int delete() {
         if (size == 1) {
@@ -86,7 +86,7 @@ public class Binary {
    
       /**
      *Printataan keko.
-     * @param root
+     * @param Binaryheap root
      */
     public void print_heap(Binarynode root) {
         System.out.println(root.value);

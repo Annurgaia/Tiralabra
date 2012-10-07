@@ -36,7 +36,7 @@ public class FibonacciTest {
             heap.extract_min();
         }
         long deleteEnd = System.currentTimeMillis();
-        System.out.println("Time spent deleteting 100 000: " + (deleteEnd-deleteStart)*1.0 + "ms.");
+        System.out.println("Time spent deleting 100 000: " + (deleteEnd-deleteStart)*1.0 + "ms.");
     }
     
     @Test
@@ -57,32 +57,32 @@ public class FibonacciTest {
         assertEquals(union.extract_min().value, 2);
 
     }
-    //Lisätään kekoon 10000 alkiota ja poistetaan ne.
+    //Lisätään kekoon 1000000 alkiota ja poistetaan ne.
     @Test
     public void insertAndDeleteTest(){
         long start = System.currentTimeMillis();
-        for (int i = 0; i < 10000; i++){
+        for (int i = 0; i < 1000000; i++){
             heap.insert(i);
         }
-        for (int i = 0; i < 10000; i++){
+        for (int i = 0; i < 1000000; i++){
             assertEquals(heap.extract_min().value, i);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Time spent: " + (end-start*1.0) + "ms");
+        System.out.println("Time spent adding and deleteting 1000000: " + (end-start*1.0) + "ms");
     }
     
     //Lisätään kekoon 10000 alkiota käänteisessä järjestyksessä ja poistetaan ne.
     @Test
     public void reverseInsertAndDeleteTest(){
         long start = System.currentTimeMillis();
-        for (int i = 10000; i >= 0; i--){
+        for (int i = 1000000; i >= 0; i--){
             heap.insert(i);
         }
-        for (int i = 0; i < 10000; i++){
+        for (int i = 0; i < 1000000; i++){
             assertEquals(heap.extract_min().value, i);
         }
         long end = System.currentTimeMillis();
-        System.out.println("Time spent in reverse: " + (end-start*1.0) + "ms");
+        System.out.println("Time spent in inserting and deleting 1000000 in reverse: " + (end-start*1.0) + "ms");
     }
     
     

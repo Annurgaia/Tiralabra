@@ -37,20 +37,20 @@ public class BinomialTest {
     @Test
     public void heapTest(){
      long start = System.currentTimeMillis();
-        for (int i = 0; i < 10000; i++){
+        for (int i = 0; i < 1000000; i++){
             heap.insert(i);
         }
         
      
         long end = System.currentTimeMillis();
         long totaltime = end - start;
-        System.out.println("Time spent: " + totaltime + "ms = " + (totaltime*1.0)/1000 + "s"); 
+        System.out.println("Time spent adding 1 000 000: " + totaltime + "ms = " + (totaltime*1.0)/1000 + "s"); 
         
 }
     @Test
     public void heapTest2(){
         long start = System.currentTimeMillis();
-        for (int i = 0; i < 10000; i++){
+        for (int i = 0; i < 1000000; i++){
             heap.insert(i);
         }
         for (int i = 0; i < 10; i++){
@@ -59,6 +59,6 @@ public class BinomialTest {
      
         long end = System.currentTimeMillis();
         long totaltime = end - start;
-        System.out.println("Time spent: " + totaltime + "ms = " + (totaltime*1.0)/1000 + "s");  
+        System.out.println("Time spent deleting 1 000 000: " + totaltime + "ms = " + (totaltime*1.0)/1000 + "s");  
 }
 }

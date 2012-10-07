@@ -26,7 +26,7 @@ public class Binomial {
     
     /**
      *Luodaan uusi keko, joka sisältää uuden solmun. Unionin avulla yhdistetään alkuperäiseen kekoon.
-     * @param value
+     * @param int value
      */
     public void insert(int value) {
         //luodaan uusi heap
@@ -46,7 +46,7 @@ public class Binomial {
     
     /**
      *etsitään keon pienin arvo
-     * @return
+     * @return min
      */
     public Binomialnode find_min() {
         //arvolle annetaan mahdollisimman suurin arvo
@@ -107,8 +107,8 @@ public class Binomial {
     
     /**
      *luodaan kahden annetun binomisolmun välille parent-child yhteys
-     * @param y
-     * @param z
+     * @param Binomialnode y
+     * @param Binomialnode z
      */
     public void link(Binomialnode y, Binomialnode z) {
         y.parent = z;
@@ -122,7 +122,7 @@ public class Binomial {
      *yhdistetään kaksi kekoa toisiinsa mergeä apuna käyttäen
      * @param k1
      * @param k2
-     * @return
+     * @return k
      */
     public Binomial union(Binomial k1, Binomial k2) {
         Binomial k = new Binomial();
@@ -204,7 +204,7 @@ public class Binomial {
    
     /**
      *tulostetaan puu
-     * @return
+     * @return print
      */
     public String toString() {
         String print = "";
@@ -220,7 +220,7 @@ public class Binomial {
 
     /**
      *ohjelman main
-     * @param args
+     * 
      */
     public static void main(String[] args) {
 
